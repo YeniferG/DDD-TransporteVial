@@ -43,7 +43,7 @@ public class Mensajeria extends Servicio {
         appendChange(new ValorServicioActualizado(valorServicio)).apply();
     }
 
-    public void asignarConductor(ServicioId servicioId, ConductorMotorizadoId entityId, TipoDocumento tipoDocumento, NombreCompleto nombreCompleto, Direccion direccion, Telefono telefono, LicenciaConduccion licenciaConduccion){
+    public void asignarConductorMotorizado(ServicioId servicioId, ConductorMotorizadoId entityId, TipoDocumento tipoDocumento, NombreCompleto nombreCompleto, Direccion direccion, Telefono telefono, LicenciaConduccion licenciaConduccion){
         appendChange(new ConductorMotorizadoAsignado(servicioId, entityId, tipoDocumento, nombreCompleto, direccion, telefono, licenciaConduccion)).apply();
     }
 

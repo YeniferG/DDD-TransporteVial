@@ -39,7 +39,7 @@ public class ServicioChange extends EventChange {
                     event.getDatosVehiculo());
         });
 
-        apply((DatosPersonalesDeAfiliadoActualizados event) -> {
+        apply((DatosPersonalesDeAliadoActualizados event) -> {
             servicio.aliado.actualizarDatosPersonales(
                     event.getTipoDocumento(),
                     event.getTipoPersona(),

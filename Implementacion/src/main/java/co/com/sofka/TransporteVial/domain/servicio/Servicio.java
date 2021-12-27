@@ -70,7 +70,7 @@ public class Servicio extends AggregateEvent<ServicioId> {
     }
 
     public void actualizarDatosPersonalesDeAliado(AliadoId aliadoId, TipoDocumento tipoDocumento, TipoPersona tipoPersona, Nombre nombre, Email email, Direccion direccion, Telefono telefono){
-        appendChange(new DatosPersonalesDeAfiliadoActualizados(aliadoId, tipoDocumento, tipoPersona, nombre, email, direccion, telefono)).apply();
+        appendChange(new DatosPersonalesDeAliadoActualizados(aliadoId, tipoDocumento, tipoPersona, nombre, email, direccion, telefono)).apply();
     }
 
     public void actualizarDatosVehiculoDeAliado(AliadoId aliadoId, Vehiculo datosVehiculo){

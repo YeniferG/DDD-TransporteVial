@@ -18,18 +18,16 @@ public class AsignarConductorMotorizado extends Command {
     private final NombreCompleto nombreCompleto;
     private final Direccion direccion;
     private final Telefono telefono;
-    private final TipoConductor tipoConductor;
     private final LicenciaConduccion licenciaConduccion;
 
 
-    public AsignarConductorMotorizado(ServicioId servicioId, ConductorMotorizadoId conductorMotorizadoId, TipoDocumento tipoDocumento, NombreCompleto nombreCompleto, Direccion direccion, Telefono telefono, TipoConductor tipoConductor, LicenciaConduccion licenciaConduccion) {
+    public AsignarConductorMotorizado(ServicioId servicioId, ConductorMotorizadoId conductorMotorizadoId, TipoDocumento tipoDocumento, NombreCompleto nombreCompleto, Direccion direccion, Telefono telefono, LicenciaConduccion licenciaConduccion) {
         this.servicioId = servicioId;
         this.conductorMotorizadoId = conductorMotorizadoId;
         this.tipoDocumento = tipoDocumento;
         this.nombreCompleto = nombreCompleto;
         this.direccion = direccion;
         this.telefono = telefono;
-        this.tipoConductor = tipoConductor;
         this.licenciaConduccion = licenciaConduccion;
     }
 
@@ -55,10 +53,6 @@ public class AsignarConductorMotorizado extends Command {
 
     public Telefono getTelefono() {
         return telefono;
-    }
-
-    public TipoConductor getTipoConductor() {
-        return tipoConductor;
     }
 
     public LicenciaConduccion getLicenciaConduccion() {
