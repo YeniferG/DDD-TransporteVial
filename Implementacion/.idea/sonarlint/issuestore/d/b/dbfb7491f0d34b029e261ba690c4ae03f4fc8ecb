@@ -1,0 +1,6 @@
+
+F
+java:S1172")Remove this unused method parameter "id".(şæÜè8æÒ”Çß/
+S
+java:S1144	"6Remove this unused private "CotizacionId" constructor.(ÆœÇä8éÒ”Çß/
+o	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(øæÆ
