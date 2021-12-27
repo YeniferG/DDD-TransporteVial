@@ -2,35 +2,31 @@ package co.com.sofka.TransporteVial.domain.servicio.events;
 
 import co.com.sofka.TransporteVial.domain.generico.values.DireccionDestino;
 import co.com.sofka.TransporteVial.domain.generico.values.DireccionInicial;
-import co.com.sofka.TransporteVial.domain.servicio.enums.TipoServicio;
 import co.com.sofka.TransporteVial.domain.servicio.values.CotizacionId;
-import co.com.sofka.TransporteVial.domain.servicio.values.Solicitante;
+import co.com.sofka.TransporteVial.domain.servicio.values.ServicioId;
 import co.com.sofka.domain.generic.DomainEvent;
 
 public class CotizacionAgregada extends DomainEvent {
 
 
+    private final ServicioId servicioId;
     private final CotizacionId cotizacionId;
-    private final Solicitante solicitante;
     private final DireccionInicial direccionInicial;
     private final DireccionDestino direccionDestino;
-    private final TipoServicio tipoServicio;
 
-    public CotizacionAgregada(CotizacionId cotizacionId, Solicitante solicitante, DireccionInicial direccionInicial, DireccionDestino direccionDestino, TipoServicio tipoServicio) {
+    public CotizacionAgregada(ServicioId servicioId, CotizacionId cotizacionId, DireccionInicial direccionInicial, DireccionDestino direccionDestino) {
         super("sofka.servicio.cotizacionAgregada");
+        this.servicioId = servicioId;
         this.cotizacionId = cotizacionId;
-        this.solicitante = solicitante;
         this.direccionInicial = direccionInicial;
         this.direccionDestino = direccionDestino;
-        this.tipoServicio = tipoServicio;
     }
 
+    public ServicioId getServicioId(){
+        return servicioId;
+    }
     public CotizacionId getCotizacionId() {
         return cotizacionId;
-    }
-
-    public Solicitante getSolicitante() {
-        return solicitante;
     }
 
     public DireccionInicial getDireccionInicial() {
@@ -39,9 +35,5 @@ public class CotizacionAgregada extends DomainEvent {
 
     public DireccionDestino getDireccionDestino() {
         return direccionDestino;
-    }
-
-    public TipoServicio getTipoServicio() {
-        return tipoServicio;
     }
 }

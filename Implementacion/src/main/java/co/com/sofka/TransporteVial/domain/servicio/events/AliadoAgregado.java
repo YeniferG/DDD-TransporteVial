@@ -4,13 +4,11 @@ import co.com.sofka.TransporteVial.domain.generico.enums.TipoDocumento;
 import co.com.sofka.TransporteVial.domain.generico.values.Direccion;
 import co.com.sofka.TransporteVial.domain.generico.values.Telefono;
 import co.com.sofka.TransporteVial.domain.servicio.enums.TipoPersona;
-import co.com.sofka.TransporteVial.domain.servicio.values.AliadoId;
-import co.com.sofka.TransporteVial.domain.servicio.values.Email;
-import co.com.sofka.TransporteVial.domain.servicio.values.Nombre;
-import co.com.sofka.TransporteVial.domain.servicio.values.Vehiculo;
+import co.com.sofka.TransporteVial.domain.servicio.values.*;
 import co.com.sofka.domain.generic.DomainEvent;
 
-public class AfiliadoAgregado extends DomainEvent {
+public class AliadoAgregado extends DomainEvent {
+    private final ServicioId servicioId;
     private final AliadoId aliadoId;
     private final TipoDocumento tipoDocumento;
     private final TipoPersona tipoPersona;
@@ -20,8 +18,9 @@ public class AfiliadoAgregado extends DomainEvent {
     private final Telefono telefono;
     private final Vehiculo datosVehiculo;
 
-    public AfiliadoAgregado(AliadoId aliadoId, TipoDocumento tipoDocumento, TipoPersona tipoPersona, Nombre nombre, Email email, Direccion direccion, Telefono telefono, Vehiculo datosVehiculo) {
+    public AliadoAgregado(ServicioId servicioId, AliadoId aliadoId, TipoDocumento tipoDocumento, TipoPersona tipoPersona, Nombre nombre, Email email, Direccion direccion, Telefono telefono, Vehiculo datosVehiculo) {
         super("sofka.servicio.afiliadoAgregado");
+        this.servicioId = servicioId;
         this.aliadoId = aliadoId;
         this.tipoDocumento = tipoDocumento;
         this.tipoPersona = tipoPersona;
@@ -30,6 +29,10 @@ public class AfiliadoAgregado extends DomainEvent {
         this.direccion = direccion;
         this.telefono = telefono;
         this.datosVehiculo = datosVehiculo;
+    }
+
+    public ServicioId getServicioId() {
+        return servicioId;
     }
 
     public AliadoId getAliadoId() {

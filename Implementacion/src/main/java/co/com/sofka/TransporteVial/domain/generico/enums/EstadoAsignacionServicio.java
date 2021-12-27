@@ -1,8 +1,9 @@
 package co.com.sofka.TransporteVial.domain.generico.enums;
 
-public enum EstadoInscripcion {
+public enum EstadoAsignacionServicio {
 
     EN_VERIFICACION,
-    INSCRITO
+    RECHAZADO,
+    ASIGNADO
 
 }

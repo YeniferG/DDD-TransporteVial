@@ -1,6 +1,6 @@
 package co.com.sofka.TransporteVial.domain.generico.enums;
 
-public enum CategoriasAutorizadas {
+public enum CategoriaAutorizada {
 
     A1,
     A2,

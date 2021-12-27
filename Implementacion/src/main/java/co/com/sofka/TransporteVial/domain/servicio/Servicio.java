@@ -7,7 +7,6 @@ import co.com.sofka.TransporteVial.domain.generico.values.DireccionInicial;
 import co.com.sofka.TransporteVial.domain.generico.values.Telefono;
 import co.com.sofka.TransporteVial.domain.servicio.enums.Estado;
 import co.com.sofka.TransporteVial.domain.servicio.enums.TipoPersona;
-import co.com.sofka.TransporteVial.domain.servicio.enums.TipoServicio;
 import co.com.sofka.TransporteVial.domain.servicio.events.*;
 import co.com.sofka.TransporteVial.domain.servicio.values.*;
 import co.com.sofka.domain.generic.AggregateEvent;
@@ -32,7 +31,7 @@ public class Servicio extends AggregateEvent<ServicioId> {
         appendChange(new ServicioCreado(entityId,descripcion,fecha,estado)).apply();
     }
 
-    private Servicio(ServicioId entityId){
+    public Servicio(ServicioId entityId){
         super(entityId);
         subscribe(new ServicioChange(this));
     }
@@ -58,7 +57,7 @@ public class Servicio extends AggregateEvent<ServicioId> {
         appendChange(new EstadoActualizado(estado)).apply();
     }
 
-    public void agregarAliado(AliadoId aliadoId, TipoDocumento tipoDocumento, TipoPersona tipoPersona, Nombre nombre, Email email, Direccion direccion, Telefono telefono, Vehiculo datosVehiculo){
+    public void agregarAliado(ServicioId servicioId, AliadoId aliadoId, TipoDocumento tipoDocumento, TipoPersona tipoPersona, Nombre nombre, Email email, Direccion direccion, Telefono telefono, Vehiculo datosVehiculo){
         Objects.requireNonNull(aliadoId);
         Objects.requireNonNull(tipoDocumento);
         Objects.requireNonNull(tipoPersona);
@@ -67,7 +66,7 @@ public class Servicio extends AggregateEvent<ServicioId> {
         Objects.requireNonNull(direccion);
         Objects.requireNonNull(telefono);
         Objects.requireNonNull(datosVehiculo);
-        appendChange(new AfiliadoAgregado(aliadoId, tipoDocumento, tipoPersona, nombre, email, direccion, telefono, datosVehiculo)).apply();
+        appendChange(new AliadoAgregado(servicioId, aliadoId, tipoDocumento, tipoPersona, nombre, email, direccion, telefono, datosVehiculo)).apply();
     }
 
     public void actualizarDatosPersonalesDeAliado(AliadoId aliadoId, TipoDocumento tipoDocumento, TipoPersona tipoPersona, Nombre nombre, Email email, Direccion direccion, Telefono telefono){
@@ -78,8 +77,8 @@ public class Servicio extends AggregateEvent<ServicioId> {
         appendChange(new DatosVehiculoDeAliadoActualizados(aliadoId, datosVehiculo)).apply();
     }
 
-    public void agregarCotizacion(CotizacionId cotizacionId, Solicitante solicitante, DireccionInicial direccionInicial, DireccionDestino direccionDestino, TipoServicio tipoServicio){
-        appendChange(new CotizacionAgregada(cotizacionId, solicitante, direccionInicial, direccionDestino, tipoServicio)).apply();
+    public void agregarCotizacion(ServicioId servicioId, CotizacionId cotizacionId, DireccionInicial direccionInicial, DireccionDestino direccionDestino){
+        appendChange(new CotizacionAgregada(servicioId, cotizacionId, direccionInicial, direccionDestino)).apply();
     }
 
     public void actualizarDireccionInicialDeCotizacion(CotizacionId cotizacionId, DireccionInicial direccionInicial){
@@ -88,14 +87,6 @@ public class Servicio extends AggregateEvent<ServicioId> {
 
     public void actualizarDireccionDestinoDeCotizacion(CotizacionId cotizacionId, DireccionDestino direccionDestino){
         appendChange(new DireccionDestinoDeCotizacionActualizada(cotizacionId, direccionDestino)).apply();
-    }
-
-    public void actualizarSolicitanteDeCotizacion(CotizacionId cotizacionId, Solicitante solicitante){
-        appendChange(new SolicitanteDeCotizacionActualizado(cotizacionId, solicitante)).apply();
-    }
-
-    public void cambiarTipoServicioDeCotizacion(CotizacionId cotizacionId, TipoServicio tipoServicio){
-        appendChange(new TipoServicioDeCotizacionCambiado(cotizacionId, tipoServicio)).apply();
     }
 
     public Descripcion descripcion() {

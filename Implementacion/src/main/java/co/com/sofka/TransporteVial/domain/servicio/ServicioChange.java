@@ -27,7 +27,7 @@ public class ServicioChange extends EventChange {
             servicio.estado = event.getEstado();
         });
 
-        apply((AfiliadoAgregado event) -> {
+        apply((AliadoAgregado event) -> {
             servicio.aliado = new Aliado(
                     new AliadoId(),
                     event.getTipoDocumento(),
@@ -56,10 +56,8 @@ public class ServicioChange extends EventChange {
         apply((CotizacionAgregada event) -> {
             servicio.cotizacion = new Cotizacion(
                     new CotizacionId(),
-                    event.getSolicitante(),
                     event.getDireccionInicial(),
-                    event.getDireccionDestino(),
-                    event.getTipoServicio());
+                    event.getDireccionDestino());
         });
 
         apply((DireccionInicialDeCotizacionActualizada event) -> {
@@ -68,14 +66,6 @@ public class ServicioChange extends EventChange {
 
         apply((DireccionDestinoDeCotizacionActualizada event) -> {
             servicio.cotizacion.actualizarDireccionDestino(event.getDireccionDestino());
-        });
-
-        apply((SolicitanteDeCotizacionActualizado event) -> {
-            servicio.cotizacion.actualizarSolicitante(event.getSolicitante());
-        });
-
-        apply((TipoServicioDeCotizacionCambiado event) -> {
-            servicio.cotizacion.cambiarTipoServicio(event.getTipoServicio());
         });
 
     }
