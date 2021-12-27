@@ -37,16 +37,5 @@ public class DireccionDestino implements ValueObject<DireccionDestino.Properties
         String direccion();
     }
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        DireccionDestino that = (DireccionDestino) o;
-        return Objects.equals(municipio, that.municipio) && Objects.equals(direccion, that.direccion);
-    }
 
-    @Override
-    public int hashCode() {
-        return Objects.hash(municipio, direccion);
-    }
 }

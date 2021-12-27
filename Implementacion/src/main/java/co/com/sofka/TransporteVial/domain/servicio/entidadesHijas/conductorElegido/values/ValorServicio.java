@@ -2,6 +2,7 @@ package co.com.sofka.TransporteVial.domain.servicio.entidadesHijas.conductorEleg
 
 import co.com.sofka.TransporteVial.domain.generico.values.DireccionDestino;
 import co.com.sofka.TransporteVial.domain.generico.values.DireccionInicial;
+import co.com.sofka.TransporteVial.domain.servicio.entidadesHijas.mensajeria.values.Valor;
 import co.com.sofka.domain.generic.ValueObject;
 
 import java.util.Objects;
