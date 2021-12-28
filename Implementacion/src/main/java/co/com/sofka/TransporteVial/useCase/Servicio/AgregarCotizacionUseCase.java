@@ -8,7 +8,7 @@ import co.com.sofka.business.generic.UseCase;
 import co.com.sofka.business.support.RequestCommand;
 import co.com.sofka.business.support.ResponseEvents;
 
-public class CrearCotizacionUseCase extends UseCase<RequestCommand<AgregarCotizacion>, ResponseEvents> {
+public class AgregarCotizacionUseCase extends UseCase<RequestCommand<AgregarCotizacion>, ResponseEvents> {
 
     @Override
     public void executeUseCase(RequestCommand<AgregarCotizacion> requestCommand) {

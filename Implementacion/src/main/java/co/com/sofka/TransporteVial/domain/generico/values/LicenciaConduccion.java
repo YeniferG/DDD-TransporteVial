@@ -4,12 +4,13 @@ import co.com.sofka.TransporteVial.domain.generico.enums.CategoriaAutorizada;
 import co.com.sofka.domain.generic.ValueObject;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
 public class LicenciaConduccion implements ValueObject<Boolean> {
 
-    private final List<CategoriaAutorizada> categoriasAutorizadas;
+    private List<CategoriaAutorizada> categoriasAutorizadas = new ArrayList<>();
     private final boolean licenciaConduccion;
 
     public LicenciaConduccion(LocalDate fechaVigencia, CategoriaAutorizada categoriasAutorizadas) {

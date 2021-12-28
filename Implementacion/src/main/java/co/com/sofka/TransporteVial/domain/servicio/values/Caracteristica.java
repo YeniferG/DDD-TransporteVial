@@ -9,7 +9,7 @@ public class Caracteristica implements ValueObject<String> {
 
     private final String caracteristica;
 
-    public Caracteristica(String caracteristica, Placa placa, Marca marca, Referencia referencia) {
+    public Caracteristica(Placa placa, Marca marca, Referencia referencia) {
         this.caracteristica = Objects.requireNonNull(generarCaracteristicaGeneral(placa, marca, referencia));
         if(this.caracteristica.isBlank()){
             throw new IllegalArgumentException("La caracteristica no puede estar vacía");

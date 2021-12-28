@@ -20,17 +20,12 @@ public class ConductorElegidoChange extends EventChange {
 
         apply((ConductorAsignado event) -> {
             if(conductorElegido.conductores.size() > 0){
-                if(conductorElegido.conductores.get(0).tipoConductor().equals(event.getTipoConductor().name())){
+                if(conductorElegido.conductores.get(0).tipoConductor().name().equals(event.getTipoConductor().name())){
                     throw  new IllegalArgumentException("El conductor asignado ya existe para este servicio");
                 }
-            }else{
-                throw new IllegalArgumentException("La lista de conductores esta vacia");
-            }
-            if(conductorElegido.conductores.size() >= 2){
-                throw new IllegalArgumentException("Ya existen dos conductores asignados para el servicio");
             }
             conductorElegido.conductores.add(new Conductor(
-                    new ConductorId(),
+                    event.getEntityId(),
                     event.getTipoDocumento(),
                     event.getNombreCompleto(),
                     event.getDireccion(),

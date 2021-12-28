@@ -15,7 +15,7 @@ public class AsignarConductorUseCase extends UseCase<RequestCommand<AsignarCondu
 
         var servicioConductorElegido = ConductorElegido.from(command.getServicioId(),retrieveEvents());
 
-        if(servicioConductorElegido.conductores().size() > 2){
+        if(servicioConductorElegido.conductores().size() >= 2){
             throw new BusinessException(command.getEntityId().value(), "No puede asignar mas de dos conductores");
         }
 

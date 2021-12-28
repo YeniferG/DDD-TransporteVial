@@ -14,6 +14,7 @@ import co.com.sofka.TransporteVial.domain.servicio.entidadesHijas.conductorElegi
 import co.com.sofka.TransporteVial.domain.servicio.values.ServicioId;
 import co.com.sofka.domain.generic.DomainEvent;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 import java.util.Optional;
@@ -21,7 +22,7 @@ import java.util.Optional;
 public class ConductorElegido extends Servicio {
 
     protected ValorServicio valorServicio;
-    protected List<Conductor> conductores;
+    protected List<Conductor> conductores = new ArrayList<>();
 
     public ConductorElegido(ServicioId entityId, ValorServicio valorServicio) {
         super(entityId);
@@ -64,7 +65,7 @@ public class ConductorElegido extends Servicio {
     public Optional<Conductor> getConductorById(ConductorId entityId){
         return conductores
                 .stream()
-                .filter(conductor -> conductor.equals(entityId))
+                .filter(conductor -> conductor.identity().value().equals(entityId.value()))
                 .findFirst();
     }
 
