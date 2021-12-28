@@ -5,12 +5,12 @@ import co.com.sofka.TransporteVial.domain.servicio.entidadesHijas.conductorElegi
 import co.com.sofka.TransporteVial.domain.servicio.values.ServicioId;
 import co.com.sofka.domain.generic.DomainEvent;
 
-public class EstadoAsignacionSevicioDeConductorActualizado extends DomainEvent {
+public class EstadoAsignacionServicioDeConductorActualizado extends DomainEvent {
 
     private final ServicioId servicioId;
     private final ConductorId conductorId;
 
-    public EstadoAsignacionSevicioDeConductorActualizado(ServicioId servicioId, ConductorId conductorId){
+    public EstadoAsignacionServicioDeConductorActualizado(ServicioId servicioId, ConductorId conductorId){
         super("sofka.conductorElegido.asignacionConductorActualizado");
         this.servicioId =servicioId;
         this.conductorId = conductorId;

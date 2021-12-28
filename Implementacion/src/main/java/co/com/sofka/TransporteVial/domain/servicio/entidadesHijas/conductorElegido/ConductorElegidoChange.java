@@ -3,7 +3,6 @@ package co.com.sofka.TransporteVial.domain.servicio.entidadesHijas.conductorEleg
 import co.com.sofka.TransporteVial.domain.generico.enums.Disponibilidad;
 import co.com.sofka.TransporteVial.domain.generico.enums.EstadoAsignacionServicio;
 import co.com.sofka.TransporteVial.domain.servicio.entidadesHijas.conductorElegido.events.*;
-import co.com.sofka.TransporteVial.domain.servicio.entidadesHijas.conductorElegido.values.ConductorId;
 import co.com.sofka.domain.generic.EventChange;
 
 public class ConductorElegidoChange extends EventChange {
@@ -49,7 +48,7 @@ public class ConductorElegidoChange extends EventChange {
             funcion.actualizarDisponibilidad(event.getDisponibilidad());
         });
 
-        apply((EstadoAsignacionSevicioDeConductorActualizado event) -> {
+        apply((EstadoAsignacionServicioDeConductorActualizado event) -> {
             var funcion = conductorElegido.getConductorById(event.getConductorId())
                     .orElseThrow(()-> new IllegalArgumentException("No se encuentra el conductor"));
             funcion.actualizarEstadoAsignacionServicio();

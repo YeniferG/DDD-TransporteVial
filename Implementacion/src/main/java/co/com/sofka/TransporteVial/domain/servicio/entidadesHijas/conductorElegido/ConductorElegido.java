@@ -59,7 +59,7 @@ public class ConductorElegido extends Servicio {
     }
 
     public void actualizarEstadoAsignacionDeConductor(ServicioId servicioId, ConductorId conductorId){
-        appendChange(new EstadoAsignacionSevicioDeConductorActualizado(servicioId,conductorId)).apply();
+        appendChange(new EstadoAsignacionServicioDeConductorActualizado(servicioId,conductorId)).apply();
     }
 
     public Optional<Conductor> getConductorById(ConductorId entityId){
