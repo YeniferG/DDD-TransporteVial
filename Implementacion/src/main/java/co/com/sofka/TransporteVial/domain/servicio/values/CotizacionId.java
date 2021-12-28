@@ -11,7 +11,7 @@ public class CotizacionId extends Identity {
     }
 
     public static CotizacionId of(String id){
-        return new CotizacionId();
+        return new CotizacionId(id);
     }
 
 }

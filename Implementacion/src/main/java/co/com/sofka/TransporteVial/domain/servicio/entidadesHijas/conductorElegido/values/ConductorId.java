@@ -11,7 +11,7 @@ public class ConductorId extends Identity {
     }
 
     public static ConductorId of(String id){
-        return new ConductorId();
+        return new ConductorId(id);
     }
 
 }

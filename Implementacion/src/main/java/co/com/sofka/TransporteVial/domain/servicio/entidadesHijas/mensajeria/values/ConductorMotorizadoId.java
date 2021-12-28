@@ -11,7 +11,7 @@ public class ConductorMotorizadoId extends Identity {
     }
 
     public static ConductorMotorizadoId of(String id){
-        return new ConductorMotorizadoId();
+        return new ConductorMotorizadoId(id);
     }
 
 }

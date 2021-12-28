@@ -11,7 +11,7 @@ public class AliadoId extends Identity {
     }
 
     public static AliadoId of(String id){
-        return new AliadoId();
+        return new AliadoId(id);
     }
 
 }

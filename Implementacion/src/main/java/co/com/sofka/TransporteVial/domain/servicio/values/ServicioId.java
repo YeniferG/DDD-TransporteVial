@@ -11,7 +11,7 @@ public class ServicioId extends Identity {
     }
 
     public static ServicioId of(String id){
-        return new ServicioId();
+        return new ServicioId(id);
     }
 
 }

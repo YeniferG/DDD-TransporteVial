@@ -12,7 +12,7 @@ public class ConductorCarroId extends Identity {
     }
 
     public static ConductorCarroId of(String id){
-        return new ConductorCarroId();
+        return new ConductorCarroId(id);
     }
 
 }
