@@ -22,8 +22,8 @@ class CrearConductorElegidoUseCaseTest {
         //arrange
 
         ServicioId servicioId = ServicioId.of("xxxx");
-        ValorServicio valorServicio = new ValorServicio(new DireccionInicial(new Municipio("Bogota"), "Calle 51 # 14-60"), new DireccionDestino(new Municipio("Bogota"), "Calle 2 # 93d-30"));
 
+        ValorServicio valorServicio = new ValorServicio(new DireccionInicial(new Municipio("Bogota"), "Calle 51 # 14-60"), new DireccionDestino(new Municipio("Bogota"), "Calle 2 # 93d-30"));
         var command = new CrearConductorElegido(servicioId, valorServicio);
         var useCase = new CrearConductorElegidoUseCase();
 

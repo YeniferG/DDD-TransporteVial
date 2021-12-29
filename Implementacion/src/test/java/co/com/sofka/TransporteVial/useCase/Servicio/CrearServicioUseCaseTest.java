@@ -11,6 +11,8 @@ import co.com.sofka.business.support.RequestCommand;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
+import java.time.LocalDateTime;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 class CrearServicioUseCaseTest {
@@ -22,7 +24,7 @@ class CrearServicioUseCaseTest {
 
         ServicioId servicioId = ServicioId.of("xxxx");
         Descripcion descripcion = new Descripcion("xxxxxxx");
-        FechaConHora fechaConHora = new FechaConHora(2021, 12, 28, 8, 30);
+        FechaConHora fechaConHora = new FechaConHora(LocalDateTime.now().getYear(), LocalDateTime.now().getMonthValue(), LocalDateTime.now().plusDays(1).getDayOfMonth(), LocalDateTime.now().getHour(), LocalDateTime.now().getMinute());
         Estado estado = Estado.EN_DESPLAZAMIENTO;
 
         var command = new CrearServicio(servicioId, descripcion, fechaConHora, estado);

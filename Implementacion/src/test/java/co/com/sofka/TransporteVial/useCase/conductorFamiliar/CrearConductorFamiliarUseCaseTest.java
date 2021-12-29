@@ -20,7 +20,7 @@ class CrearConductorFamiliarUseCaseTest {
         //arrange
 
         ServicioId servicioId = ServicioId.of("xxxx");
-        Valor valorServicio = new Valor(10.000, new Tiempo("horas", 3));
+        Valor valorServicio = new Valor(10000.00, new Tiempo("horas", 3));
         Tiempo tiempo = new Tiempo("horas", 3);
 
         var command = new CrearConductorFamiliar(servicioId, valorServicio, tiempo);

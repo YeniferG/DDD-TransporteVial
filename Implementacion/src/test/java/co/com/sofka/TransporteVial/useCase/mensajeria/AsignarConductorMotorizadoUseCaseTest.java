@@ -26,6 +26,7 @@ import org.mockito.Mockito;
 import org.mockito.junit.jupiter.MockitoExtension;
 
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.time.Month;
 import java.util.List;
 
@@ -82,7 +83,7 @@ class AsignarConductorMotorizadoUseCaseTest {
         return List.of(new ServicioCreado(
                         ServicioId.of("xxxx"),
                         new Descripcion("xxxxxxx"),
-                        new FechaConHora(2021, 12, 28, 8, 30),
+                        new FechaConHora(LocalDateTime.now().getYear(), LocalDateTime.now().getMonthValue(), LocalDateTime.now().plusDays(1).getDayOfMonth(), LocalDateTime.now().getHour(), LocalDateTime.now().getMinute()),
                         Estado.EN_DESPLAZAMIENTO
                 )
         );

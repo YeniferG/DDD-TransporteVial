@@ -11,8 +11,6 @@ Ksrc/main/java/co/com/sofka/TransporteVial/domain/servicio/values/Placa.java,f\
 Psrc/main/java/co/com/sofka/TransporteVial/domain/servicio/values/Referencia.java,c\0\c0af8ccab8269cab37d2a38cd9b62be7accbf19f
 å
 \src/main/java/co/com/sofka/TransporteVial/domain/servicio/events/DescripcionActualizada.java,3\9\3993b43fb8c759544dce9bb97db3b8dd12fa0c11
-õ
-ksrc/main/java/co/com/sofka/TransporteVial/domain/servicio/events/DatosPersonalesDeAfiliadoActualizados.java,b\6\b66db6a4649cfbbcb4ef061b8eceebcbd007dea8
 ù
 msrc/main/java/co/com/sofka/TransporteVial/domain/servicio/events/DireccionInicialDeCotizacionActualizada.java,5\8\58a5bfa0135424193ac37282efc2c0024ab8afac
 ù
@@ -23,3 +21,13 @@ gsrc/main/java/co/com/sofka/TransporteVial/domain/servicio/commands/ActualizarDa
 nsrc/main/java/co/com/sofka/TransporteVial/domain/servicio/commands/ActualizarDireccionDestinoDeCotizacion.java,3\0\3093e4689ca73802ec88e3a7800d1e0721b4a16f
 û
 nsrc/main/java/co/com/sofka/TransporteVial/domain/servicio/commands/ActualizarDireccionInicialDeCotizacion.java,8\1\814d843c05a76cc32339f988de78f924a247f20a
+Ç
+Rsrc/main/java/co/com/sofka/TransporteVial/domain/servicio/values/FechaConHora.java,a\9\a9d796b4a04beb13aacfec72c3f485b9000b8cd7
+î
+dsrc/main/java/co/com/sofka/TransporteVial/useCase/Servicio/CrearServicioConductorElegidoUseCase.java,c\1\c1b3772073941cb3e241a4316f18e87d9f4c37ea
+§
+tsrc/main/java/co/com/sofka/TransporteVial/useCase/conductorElegido/ActualizarEstadoAsignacionDeConductorUseCase.java,8\9\89ba5b4570715318377e90ca0346a765a1cfccc4
+å
+\src/test/java/co/com/sofka/TransporteVial/useCase/mensajeria/CrearMensajeriaUseCaseTest.java,8\9\89e860ea790bce6b1cc1a33e90d2ec54e57bfdcf
+ò
+hsrc/test/java/co/com/sofka/TransporteVial/useCase/Servicio/CrearServicioConductorElegidoUseCaseTest.java,c\2\c25d0dd240f99551d7b440c83ba3b591d54aa053
